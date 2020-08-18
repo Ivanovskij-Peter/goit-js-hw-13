@@ -1,11 +1,6 @@
 import './styles.css';
 import itemTemplate from './templates/item.hbs';
 import refs from './js/refs.js';
-//   const options = {
-//     headers: {
-//       Autorization: apiKey,
-//     },
-//   };
 
 const apiKey = '17938696-a211d439281abf74b3f685096';
 function fetchPictures() {
