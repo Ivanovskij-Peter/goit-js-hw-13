@@ -18,3 +18,38 @@ body {
    */
   background-image: url('./images/bg-pattern.png');
 }
+.gallery {
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.stats {
+  display: flex;
+  justify-content: space-evenly;
+}
+img {
+  display: block;
+  width: 640px;
+  height: 390px;
+}
+li {
+  display: block;
+  margin: 15px;
+}
+.button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.button > .spinner.is-hidden {
+  display: none;
+}
+/* .button.is-hidden {
+  display: none;
+} */
+.input {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -9,11 +9,18 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
   </head>
 
   <body>
     <form class="search-form" id="search-form">
       <input
+        class="input"
         id="input"
         type="text"
         name="query"
@@ -22,5 +29,18 @@
       />
     </form>
     <ul class="gallery"></ul>
+
+    <button
+      type="button"
+      class="btn btn-primary button"
+      data-action="Load more"
+    >
+      <span
+        class="spinner-border spinner-border-sm spinner is-hidden"
+        role="status"
+        aria-hidden="true"
+      ></span>
+      <span class="label">Показать еще</span>
+    </button>
   </body>
 </html>
