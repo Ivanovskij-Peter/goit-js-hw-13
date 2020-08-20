@@ -6,32 +6,31 @@ import updateMarcup from './js/marcup';
 
 refs.input.addEventListener('input', event => {
   newServise.query = event.target.value;
-
   newServise.resetPage();
-  fetchPictures();
+  fetchPictures(true);
+  updateStateBtn(true, 'Загружаем...');
 });
 
-function createElement(arr) {
+function createElement(arr, bool) {
   const markup = itemTemplate(arr);
-  updateMarcup(markup);
+  updateMarcup(markup, bool);
 }
 refs.btn.addEventListener('click', () => {
-  fetchPictures();
-  window.scrollTo({
-    top: 100,
+  fetchPictures(false);
+  window.scroll({
+    top: 900,
     behavior: 'smooth',
   });
 });
 
-function fetchPictures() {
-  refs.btn.disabled = true;
-  refs.btnLabel.textContent = 'Загружаем...';
-  refs.btnSpinner.classList.remove('is-hidden');
-
+function fetchPictures(bool) {
   newServise.fetchPictures().then(hits => {
-    createElement(hits);
-    refs.btn.disabled = false;
-    refs.btnLabel.textContent = 'Показать еще';
-    refs.btnSpinner.classList.add('is-hidden');
+    createElement(hits, bool);
+    updateStateBtn(false, 'Показать еще');
   });
+}
+function updateStateBtn(bool, textbtn) {
+  refs.btn.disabled = bool;
+  refs.btnLabel.textContent = textbtn;
+  // refs.btnSpinner.classList.toggle('is-hidden');
 }
