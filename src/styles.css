@@ -42,7 +42,7 @@ li {
   margin-left: auto;
   margin-right: auto;
 }
-.button > .spinner.is-hidden {
+.is-hidden {
   display: none;
 }
 /* .button.is-hidden {

@@ -5,10 +5,12 @@ import newServise from './js/servise';
 import updateMarcup from './js/marcup';
 
 refs.input.addEventListener('input', event => {
+  refs.input.innerHTML = '';
   newServise.query = event.target.value;
   newServise.resetPage();
   fetchPictures(true);
   updateStateBtn(true, 'Загружаем...');
+  refs.btn.classList.add('is-hidden');
 });
 
 function createElement(arr, bool) {
@@ -27,6 +29,7 @@ function fetchPictures(bool) {
   newServise.fetchPictures().then(hits => {
     createElement(hits, bool);
     updateStateBtn(false, 'Показать еще');
+    refs.btn.classList.remove('is-hidden');
   });
 }
 function updateStateBtn(bool, textbtn) {
