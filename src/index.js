@@ -19,8 +19,8 @@ function createElement(arr, bool) {
 }
 refs.btn.addEventListener('click', () => {
   fetchPictures(false);
-  window.scroll({
-    top: 900,
+  window.scrollTo({
+    top: document.documentElement.clientHeight,
     behavior: 'smooth',
   });
 });
@@ -35,5 +35,4 @@ function fetchPictures(bool) {
 function updateStateBtn(bool, textbtn) {
   refs.btn.disabled = bool;
   refs.btnLabel.textContent = textbtn;
-  // refs.btnSpinner.classList.toggle('is-hidden');
 }
