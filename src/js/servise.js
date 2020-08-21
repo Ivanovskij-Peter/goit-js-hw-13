@@ -4,7 +4,7 @@ export default {
   searchQuery: '',
   page: 1,
   fetchPictures() {
-    const url = `https://pixabay.com/api/?image_type=photo&orientation=horizontal&q=${this.query}&page=${this.page}&per_page=3&key=${apiKey}`;
+    const url = `https://pixabay.com/api/?image_type=photo&orientation=horizontal&q=${this.query}&page=${this.page}&per_page=10&key=${apiKey}`;
     return fetch(url)
       .then(res => res.json())
       .then(({ hits }) => {

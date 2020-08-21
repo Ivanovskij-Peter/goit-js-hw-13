@@ -30,8 +30,8 @@ body {
 }
 img {
   display: block;
-  width: 640px;
-  height: 390px;
+  width: 320px;
+  height: 250px;
 }
 li {
   display: block;
@@ -45,9 +45,7 @@ li {
 .is-hidden {
   display: none;
 }
-/* .button.is-hidden {
-  display: none;
-} */
+
 .input {
   display: flex;
   margin-left: auto;

@@ -17,17 +17,20 @@ function createElement(arr, bool) {
   const markup = itemTemplate(arr);
   updateMarcup(markup, bool);
 }
+let count = 0;
 refs.btn.addEventListener('click', () => {
-  fetchPictures(false);
+  count += 800;
   window.scrollTo({
-    top: document.documentElement.clientHeight,
+    top: count,
     behavior: 'smooth',
   });
+  fetchPictures(false);
 });
 
 function fetchPictures(bool) {
   newServise.fetchPictures().then(hits => {
     createElement(hits, bool);
+
     updateStateBtn(false, 'Показать еще');
     refs.btn.classList.remove('is-hidden');
   });
